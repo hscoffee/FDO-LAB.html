@@ -1,0 +1,8 @@
+:root{
+ --game-ink:#edf1e9;--game-muted:#b0bdbb;--game-dark:#122c37;--game-panel:#183743;--game-panel-raised:#244753;--game-paper:#eef0e6;--game-paper-ink:#17313b;
+ --game-gold:#d7b674;--game-line:#668085;--game-accent:#84c5b4;--game-danger:#f0a89a;
+ --game-panel-fill:linear-gradient(145deg,#244752ed,#14303cf5);--game-button-fill:linear-gradient(#345968,#24414e);--game-primary-fill:linear-gradient(#e5c98f,#c7a369);
+ --game-shadow:0 6px 20px #071b2866;--game-inset:inset 0 1px #ffffff16;--game-focus:0 0 0 3px #d7b67466;
+ --game-radius:9px;--game-radius-sm:5px;--game-gap:12px;--game-gap-sm:6px;--game-pad:16px;
+ --game-text-sm:.875rem;--game-text:1rem;--game-title:1.35rem;--game-heading:1.75rem;--game-icon:32px;--game-control:44px;
+}

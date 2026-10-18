@@ -1,0 +1,3 @@
+import {victoryPresentation,countries,activeGroups,lessonScore} from '../../lib/content';
+import styles from './VictorySummary.module.css';
+export default function VictorySummary({s}:{s:any}){if(!s.winners?.length)return null;const result=victoryPresentation(s);return <section className={styles.summary} aria-label="승리 결과"><h3>{result.title}</h3><p>{result.message}</p>{s.mode!=='competition'&&result.reason==='score'&&<><div className={styles.scores}>{activeGroups(s).map(g=><span key={g} data-winner={s.winners.includes(g)}>{countries[s.assignment[g]].name} <b>{s.lessonScores?.[g]??lessonScore(s,g)}점</b></span>)}</div><small>보유 물자는 품목별 목표량까지만 점수에 합산해요. 동점은 공동 승리예요.</small></>}</section>;}

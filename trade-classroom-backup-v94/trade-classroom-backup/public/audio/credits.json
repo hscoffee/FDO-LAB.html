@@ -1,0 +1,43 @@
+{
+  "tracks": [
+    {
+      "title": "Legionnaire (2022 Remaster)",
+      "file": "legionnaire.mp3",
+      "screens": "entry and waiting",
+      "source": "https://www.scottbuckley.com.au/library/legionnaire-2022/"
+    },
+    {
+      "title": "Pathfinder",
+      "file": "pathfinder.mp3",
+      "screens": "gameplay",
+      "source": "https://www.scottbuckley.com.au/library/pathfinder/"
+    }
+  ],
+  "author": "Scott Buckley",
+  "license": "CC BY 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "changes": "Original downloaded files; playback volume adjustment and looping.",
+  "previousAssets": {
+    "title": "Age of Trade",
+    "author": "Original composition for 세계 무역 교실",
+    "method": "Procedural acoustic-style synthesis; scripts/create-strategy-music.py",
+    "durationSeconds": 80,
+    "tempoBpm": 96,
+    "notes": "No third-party samples or game melodies used. Previous unused asset attribution retained below.",
+    "previousAsset": {
+      "title": "Heroic Demise (Updated Version)",
+      "author": "Matthew Pablo",
+      "source": "https://opengameart.org/content/heroic-demise-updated-version",
+      "license": "CC BY 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+      "changes": "Audio-only conversion to 160 kbps MP3, loudness normalization; repeats during gameplay."
+    },
+    "effects": {
+      "maritime-horn.mp3": {
+        "method": "Original low maritime horn synthesis; scripts/create-maritime-horn.py",
+        "durationSeconds": 2.8,
+        "notes": "No external sound samples."
+      }
+    }
+  }
+}

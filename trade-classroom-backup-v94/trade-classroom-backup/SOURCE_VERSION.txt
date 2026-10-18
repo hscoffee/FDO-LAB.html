@@ -1,0 +1,3 @@
+Source: world trade classroom v94
+Commit: 1e9286c805f4cca3e8a83b60cca231ccbc9215f4
+Standalone Cloudflare configuration; no live-room data included.

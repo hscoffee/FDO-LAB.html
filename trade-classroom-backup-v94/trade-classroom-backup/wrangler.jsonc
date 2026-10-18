@@ -1,0 +1,20 @@
+// Replace database_id with your Cloudflare D1 Database ID before deploying.
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "trade-classroom-backup",
+  "main": "./build/standalone-worker.ts",
+  "compatibility_date": "2026-05-15",
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "trade-classroom-backup",
+      "database_id": "bea2ac77-661c-477d-acce-0db2cb0101e5"
+    }
+  ],
+  "observability": {
+    "enabled": true
+  }
+}

@@ -1,0 +1,7 @@
+'use client';
+import {competitionScore} from '../../lib/technology';
+import {activeGroups,countries} from '../../lib/content';
+export default function CompetitionBoard({s,compact=false}:{s:any;compact?:boolean}){
+ const rows=activeGroups(s).map(g=>({g,ci:s.assignment[g],score:competitionScore(s,g)})).sort((a,b)=>b.score.total-a.score.total);
+ return <section className={'competition-board '+(compact?'compact':'')} aria-label="종합 점수 순위"><div className="competition-heading"><h2>{s.phase===6?'20분 경쟁 결과':'종합 점수 순위'}</h2><span>자원·생활 20 · 연구 40 · 무역 40점</span></div><div className="competition-countries">{rows.map(({g,ci,score},i)=><article key={g} data-winner={s.phase===6&&s.winners?.includes(g)}><h3><span className="nation-flag" style={{backgroundPosition:`${ci%3*50}% ${Math.floor(ci/3)*100}%`}}/>{countries[ci].name}<b>{score.total}점</b></h3><div className="competition-buildings">{[['자원·생활',score.resources,20],['연구',score.research,40],['무역',score.trade,40]].map(([label,value,max])=><span key={String(label)} data-done={Number(value)>0}>{label} {value}/{max}<progress value={Number(value)} max={Number(max)} aria-label={String(label)+' 점수'}/></span>)}</div>{s.phase===6&&s.winners?.includes(g)&&<strong>{s.winners?.length>1?'공동 우승':'우승'}</strong>}</article>)}</div>{!compact&&<p>보유 물자 최대 10점 + 도시 생활 최대 10점 · 배송 완료한 수출 가치 3당 무역 1점(품목별 최초 10개까지 · 고급품 6~10개는 점수 20%) · 연구에 쓴 물자는 창고에서 차감됩니다.</p>}</section>;
+}

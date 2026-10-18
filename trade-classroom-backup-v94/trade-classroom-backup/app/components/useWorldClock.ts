@@ -1,0 +1,3 @@
+'use client';
+import {useEffect,useRef,useState} from 'react';
+export default function useWorldClock(s:any,serverNow:number){const speed=s.clockSpeed??s.simulation?.speed??1;const [clock,Clock]=useState(serverNow),anchor=useRef({server:serverNow,local:0});useEffect(()=>{const t=performance.now();if(!anchor.current.local||Math.abs(serverNow-(anchor.current.server+(t-anchor.current.local)*speed))>1500)anchor.current={server:serverNow,local:t};},[serverNow,speed]);useEffect(()=>{let id=0,last=0;const frame=(t:number)=>{if(t-last>250){Clock(anchor.current.server+(t-anchor.current.local)*speed);last=t;}id=requestAnimationFrame(frame);};id=requestAnimationFrame(frame);return()=>cancelAnimationFrame(id);},[speed]);return s.endedAt||(s.paused?s.pauseAt:clock);}
